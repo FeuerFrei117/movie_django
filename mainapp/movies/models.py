@@ -55,7 +55,7 @@ class Movie(models.Model) :
     genres = models.ManyToManyField(Genre, verbose_name='жанры')
     world_premiere = models.DateField('Премьера в мире', default=date.today)
     budget = models.PositiveIntegerField('Бюджет', default=0, help_text='указывать сумму в долларах')
-    fees_in_usa = models.PositiveIntegerField('Сборы в СЩА', default=0, help_text='указывать сумму в долларах')
+    fees_in_usa = models.PositiveIntegerField('Сборы в США', default=0, help_text='указывать сумму в долларах')
     fess_in_world = models.PositiveIntegerField('Сборы в мире', default=0, help_text='указывать сумму в долларах')
     category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.SET_NULL, null=True)
     url = models.SlugField(max_length=160, unique=True)
@@ -91,7 +91,7 @@ class RatingStar(models.Model) :
 
     class Meta :
         verbose_name = 'Звезда рейтинга'
-        verbose_name_plural = 'Звездs рейтинга'
+        verbose_name_plural = 'Звезды рейтинга'
 
 
 class Rating(models.Model) :
