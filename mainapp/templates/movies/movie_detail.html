@@ -105,26 +105,13 @@
                         <h3 class="sear-head editContent" style="outline: none; cursor: inherit;">
                             Жанры</h3>
                         <ul class="w3layouts-box-list">
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">Аниме</span>
-                            </li>
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">Боевики</span>
-                            </li>
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">Комедии</span>
-                            </li>
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">Ужасы</span>
-                            </li>
+                            {% for genre in view.get_genres %}
+                                <li class="editContent" style="outline: none; cursor: inherit;">
+                                    <input type="checkbox" class="checked">
+                                    <span class="span editContent"
+                                          style="outline: none; cursor: inherit;">{{ genre.name }}</span>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <!-- // preference -->
@@ -133,36 +120,13 @@
                         <h3 class="sear-head editContent" style="outline: none; cursor: inherit;">
                             Год</h3>
                         <ul class="w3layouts-box-list">
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">2020</span>
-                            </li>
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">2019</span>
-                            </li>
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">2018</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">2017</span>
-                            </li>
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">2016</span>
-                            </li>
-                            <li class="editContent" style="outline: none; cursor: inherit;">
-                                <input type="checkbox" class="checked">
-                                <span class="span editContent"
-                                      style="outline: none; cursor: inherit;">2015</span>
-                            </li>
+                            {% for year in view.get_years %}
+                                <li class="editContent" style="outline: none; cursor: inherit;">
+                                    <input type="checkbox" class="checked">
+                                    <span class="span editContent"
+                                          style="outline: none; cursor: inherit;">{{ year }}</span>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <!-- //discounts -->
@@ -368,13 +332,15 @@
                                     {% endfor %}
                                     </span>
                                 </li>
-                                <li style="list-style: none"><span><b>Премьера в мире:</b> {{ movie.world_premiere }}</span>
+                                <li style="list-style: none">
+                                    <span><b>Премьера в мире:</b> {{ movie.world_premiere }}</span>
                                 </li>
                                 <li style="list-style: none">
                                     <span><b>Бюджет:</b> ${{ movie.budget }}</span></li>
                                 <li style="list-style: none">
                                     <span><b>Сборы в США:</b> ${{ movie.fees_in_usa }}</span></li>
-                                <li style="list-style: none"><span><b>Сборы в мире:</b> ${{ movie.fess_in_world }}</span>
+                                <li style="list-style: none">
+                                    <span><b>Сборы в мире:</b> ${{ movie.fess_in_world }}</span>
                                 </li>
                                 <li style="list-style: none">
                                     <a href="#"><b>Рейтинг:</b>
