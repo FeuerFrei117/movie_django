@@ -7,4 +7,4 @@ Study projects
   - Поиск по сайту, рейтинг по жанру, годам и актерам
   - Описание фильмов и отзывы к ним
 
-Ссылка на курс: https://www.youtube.com/watch?v=H1SZQefeJN0&list=PLF-NY6ldwAWrb6nQcPL21XX_-AmivFAYq&index=3
+Ссылка на курс: https://www.youtube.com/watch?v=H1SZQefeJN0&list=PLF-NY6ldwAWrb6nQcPL21XX_-AmivFAYq
